@@ -1,16 +1,17 @@
 # Text to MBTI (Zero Shot - model)
 😄 재미로 만드는 MBTI 해석기 - MBTI Translator (나는 오늘 어떤 MBTI처럼 살았을까?)
-아레 Repo를, demo 및 WebApp으로 만들기 위한 Repo 입니다: https://github.com/ethHong/text_mbti
+
+* 다음 링크의 Repo를, demo 및 WebApp으로 만들기 위한 Repo 입니다: https://github.com/ethHong/text_mbti
+* Streamlit을 사용한 데모를 구축한 상태입니다. 
 
 ## About the project & Examples
-* 문장을 입력하세요! 다능하다면 '성격유형' 의 성향이 드러날만한 문장을 입력하세요. 아래와 같이 어떤 성격유형에 가까운 발화인지 출력합니다
-
+* 문장을 입력하세요! 가능하다면 '성격유형' 의 성향이 드러날만한 문장을 입력하세요. 아래와 같이 어떤 성격유형에 가까운 발화인지 출력합니다
 
 ## Model and requirements
 * 사용 모델: https://huggingface.co/facebook/bart-large-mnli
 * Huggingface 에 공유된 Facebook 으 Zero-shot text classification 모델을 사용합니다. 
-* torch 및 transformers 세팅이 필요하며, 아래와 같이 pipenv 를 설정해주세요 - ~~pipfile을 통해 설치 가능합니다.
-* >> 02.20 update: Streamlit Sharing을 통한 데모 배포를 위해 requirement.txt만을 사용합니다
+* torch 및 transformers 세팅이 필요하며, 아래와 같이 pipenv 를 설정해주세요 - ~~pipfile을 통해 설치 가능합니다.~~
+>02.20 update: Streamlit Sharing을 통한 데모 배포를 위해 requirement.txt만을 사용합니다
 
 ```
 pip install -r requirements.txt

@@ -1,21 +1,15 @@
-import pandas as pd
+from transformers import AutoModelForSequenceClassification
+from transformers import AutoTokenizer
 import numpy as np
-import json
-from collections import Counter
-from itertools import chain, repeat
-from tqdm import tqdm
 from load_data import *
 import matplotlib.pyplot as plt
 import streamlit as st
 
-tqdm.pandas()
 
 import torch
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
-from transformers import AutoTokenizer
-from transformers import AutoModelForSequenceClassification
 
 tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-mnli")
 nli_model = (
@@ -90,7 +84,8 @@ def plot_mbti(result):
     x, y = result.values()
     x_type, y_type = result.keys()
 
-    ax.broken_barh([(start, x), (x, x + y)], [10, 9], facecolors=("#FFC5BF", "#D4F0F0"))
+    ax.broken_barh([(start, x), (x, x + y)], [10, 9],
+                   facecolors=("#FFC5BF", "#D4F0F0"))
     ax.set_ylim(5, 15)
     ax.set_xlim(0, 100)
     ax.spines["left"].set_visible(False)

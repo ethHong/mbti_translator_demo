@@ -1,29 +1,10 @@
 # Text to MBTI (Zero Shot - model)
 😄 재미로 만드는 MBTI 해석기 - MBTI Translator (나는 오늘 어떤 MBTI처럼 살았을까?)
 
+아래 모델의 프로토타입을 streamlit 으로 구현하고있습니다: https://github.com/ethHong/text_mbti
+
 ## About the project & Examples
 * 문장을 입력하세요! 다능하다면 '성격유형' 의 성향이 드러날만한 문장을 입력하세요. 아래와 같이 어떤 성격유형에 가까운 발화인지 출력합니다
-```
-Input: "I stayed home all day"
-
-===
-
-Output:
-
-You are:  ISFP
-Ratio {'E': 27.338588094108168, 'I': 72.66141190589182} {'N': 22.149243913056992, 'S': 77.85075608694301} {'T': 46.17274433748438, 'F': 53.82725566251562} {'P': 57.30466611213056, 'J': 42.69533388786944}
-```
-
-```
-Input: "I'm making plans for my trip to Osaka. I'm so excited!"
-
-===
-
-Output:
-
-You are:  ESTJ
-Ratio {'E': 71.53464326345417, 'I': 28.46535673654582} {'N': 35.33135528913844, 'S': 64.66864471086156} {'T': 58.70273162646018, 'F': 41.29726837353982} {'P': 46.96476087995551, 'J': 53.03523912004449}
-```
 
 ## Model and requirements
 * 사용 모델: https://huggingface.co/facebook/bart-large-mnli
@@ -35,10 +16,8 @@ Ratio {'E': 71.53464326345417, 'I': 28.46535673654582} {'N': 35.33135528913844, 
 pip install -r requirements.txt
 ```
 
-다만, torch 및 transformers 는 별도 환경설정이 필요할 수 있습니다. 
-* 여기에서 각 환경에 맞는 pytorch 를 설정해주세요: https://pytorch.org
 ```
-pip install transformers
+streamlit run app.py
 ```
 Zero-shot model 에 대한 레퍼런스는 https://joeddav.github.io/blog/2020/05/29/ZSL.html 이 링크를 참고해주세요!
 

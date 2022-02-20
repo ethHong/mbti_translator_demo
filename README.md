@@ -9,8 +9,8 @@
 ## Model and requirements
 * 사용 모델: https://huggingface.co/facebook/bart-large-mnli
 * Huggingface 에 공유된 Facebook 으 Zero-shot text classification 모델을 사용합니다. 
-* torch 및 transformers 세팅이 필요하며, 아래와 같이 pipenv 를 설정해주세요 - ~~pipfile을 통해 설치 가능합니다.
-* >> 02.20 update: Streamlit Sharing을 통한 데모 배포를 위해 requirement.txt만을 사용합니다
+* torch 및 transformers 세팅이 필요하며, 아래와 같이 pipenv 를 설정해주세요 - ~~pipfile을 통해 설치 가능합니다.~~
+> 02.20 update: Streamlit Sharing을 통한 데모 배포를 위해 requirement.txt만을 사용합니다
 
 ```
 pip install -r requirements.txt

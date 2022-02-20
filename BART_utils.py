@@ -2,12 +2,12 @@ import numpy as np
 from load_data import *
 import matplotlib.pyplot as plt
 import streamlit as st
-
+import pickle
 
 import torch
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
-
+"""
 from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
 
@@ -18,7 +18,14 @@ nli_model = (
     ).cuda()
     if torch.cuda.is_available()
     else AutoModelForSequenceClassification.from_pretrained("facebook/bart-large-mnli")
-)
+    
+)"""
+
+with open("nli_model.pkl", "rb") as f:
+    nli_model = pickle.load(f)
+
+with open("tokenizer.pkl", "rb") as f:
+    tokenizer = pickle.load(f)
 
 
 def get_prob(sequence, label):

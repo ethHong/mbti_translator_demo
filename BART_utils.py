@@ -3,8 +3,11 @@ from load_data import *
 import matplotlib.pyplot as plt
 import streamlit as st
 import pickle
-
 import torch
+
+from transformers import AutoTokenizer
+from transformers import AutoModelForSequenceClassification
+
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 """

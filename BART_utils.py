@@ -1,3 +1,4 @@
+from sre_parse import Tokenizer
 import numpy as np
 from load_data import *
 import matplotlib.pyplot as plt
@@ -24,11 +25,17 @@ nli_model = (
     
 )"""
 
-with open("nli_model.pkl", "rb") as f:
-    nli_model = pickle.load(f)
+@st.cache
+def load_model()
+    with open("https://drive.google.com/file/d/1u4FvikIiZIVqpqbPzQQ8tsG5P_Smt_Ak/view?usp=sharing", "rb") as f:
+        nli_model = pickle.load(f)       
+    return nli_model
 
 with open("tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
+
+"""with open("nli_model.pkl", "rb") as f:
+        nli_model = pickle.load(f)"""
 
 
 def get_prob(sequence, label):

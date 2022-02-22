@@ -1,9 +1,7 @@
-from sre_parse import Tokenizer
 import numpy as np
 from load_data import *
 import matplotlib.pyplot as plt
 import streamlit as st
-import pickle
 import torch
 
 from transformers import AutoTokenizer
@@ -11,9 +9,6 @@ from transformers import AutoModelForSequenceClassification
 
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
-
-from transformers import AutoTokenizer
-from transformers import AutoModelForSequenceClassification
 
 tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-mnli")
 nli_model = (
@@ -27,7 +22,7 @@ nli_model = (
 
 def get_prob(sequence, label):
     premise = sequence
-    hypothesis = "This example is {label}."
+    hypothesis = f"This example is {label}."
 
     # run through model pre-trained on MNLI
     x = tokenizer.encode(
@@ -88,7 +83,8 @@ def plot_mbti(result):
     x, y = result.values()
     x_type, y_type = result.keys()
 
-    ax.broken_barh([(start, x), (x, x + y)], [10, 9], facecolors=("#FFC5BF", "#D4F0F0"))
+    ax.broken_barh([(start, x), (x, x + y)], [10, 9],
+                   facecolors=("#FFC5BF", "#D4F0F0"))
     ax.set_ylim(5, 15)
     ax.set_xlim(0, 100)
     ax.spines["left"].set_visible(False)

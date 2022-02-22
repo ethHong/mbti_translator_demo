@@ -19,8 +19,8 @@ submit = st.button("문장 생성")
 
 
 if submit:
-
-    output_mbti, output_ratio = mbti_translator(user_input)
+    with st.spinner("AI가 결과를 분석하는 중이에요..."):
+        output_mbti, output_ratio = mbti_translator(user_input)
     st.success("Success")
 
     st.subheader("🤔참 이 MBTI같은 문장이군요🎉 : " + output_mbti)

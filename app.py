@@ -1,6 +1,5 @@
 import streamlit as st
-
-from BART_utils import get_prob, judge_mbti, compute_score, mbti_translator, plot_mbti, device, load_model
+from BART_utils import get_prob, judge_mbti, compute_score, mbti_translator, plot_mbti, device
 
 
 st.title("MBTI 번역기")
@@ -16,15 +15,13 @@ st.write("🤗문장을 입력하면, 이를 분석해서 MBTI를 출력해줍�
 user_input = st.text_input("👇👇문장을 입력하면 MBTI가 나옵니다!", "I stayed home all day")
 submit = st.button("문장 생성")
 
-tokenizer, nli_model = load_model()
-
 if submit:
     with st.spinner("AI가 결과를 분석하는 중이에요..."):
         output_mbti, output_ratio = mbti_translator(
-            user_input, tokenizer, nli_model)
+            user_input)
 
+    st.success("Success")
     st.subheader("🤔참 이 MBTI같은 문장이군요🎉 : " + output_mbti)
 
     for result in output_ratio:
         plot_mbti(result)
-    st.success("Success")

@@ -5,17 +5,21 @@
 
 ## About the project & Examples
 * 문장을 입력하세요! 다능하다면 '성격유형' 의 성향이 드러날만한 문장을 입력하세요. 아래와 같이 어떤 성격유형에 가까운 발화인지 출력합니다
+<img width="531" alt="image" src="https://user-images.githubusercontent.com/43837843/155150705-24830c0b-91a9-4aba-a168-d099e712ca25.png">
+
+## How it works?
+* Facebook 의 Zero-shot classification 모델을 사용합니다. 
+* 모델은 각 MBTI 요소들과 관련된 단어의 dictionary 통해, 문장이 각 단어들과 연관되어있을 확률을 출력합니다. 
 
 ## Model and requirements
 * 사용 모델: https://huggingface.co/facebook/bart-large-mnli
 * Huggingface 에 공유된 Facebook 으 Zero-shot text classification 모델을 사용합니다. 
-* torch 및 transformers 세팅이 필요하며, 아래와 같이 pipenv 를 설정해주세요 - ~~pipfile을 통해 설치 가능합니다.~~
+* 아래와 같이 requirements를 설정해주세요. 단, torch의 경우 GPU를 사용하고싶다면 알맞읍 버전을 설치해주세요. 
 > 02.20 update: Streamlit Sharing을 통한 데모 배포를 위해 requirement.txt만을 사용합니다
 
 ```
 pip install -r requirements.txt
 ```
-
 ```
 streamlit run app.py
 ```

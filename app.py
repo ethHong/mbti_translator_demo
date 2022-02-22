@@ -1,6 +1,6 @@
 import streamlit as st
 
-from BART_utils import get_prob, judge_mbti, compute_score, mbti_translator, plot_mbti
+from BART_utils import get_prob, judge_mbti, compute_score, mbti_translator, plot_mbti, device
 
 
 st.title("MBTI 번역기")

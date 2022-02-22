@@ -27,7 +27,7 @@ nli_model = (
 
 def get_prob(sequence, label):
     premise = sequence
-    hypothesis = f"This example is {label}."
+    hypothesis = "This example is {label}."
 
     # run through model pre-trained on MNLI
     x = tokenizer.encode(

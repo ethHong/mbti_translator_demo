@@ -4,6 +4,12 @@ from BART_utils import get_prob, judge_mbti, compute_score, mbti_translator, plo
 
 
 st.title("MBTI 번역기")
+if device == "cpu":
+    processor = "🖥️"
+else:
+    processor = "💽"
+st.subheader("Running on {}".format(device + processor))
+
 st.header("💻나는 오늘 어떤 MBTI처럼 말하고, 살았을까?")
 st.write("🤗문장을 입력하면, 이를 분석해서 MBTI를 출력해줍니다🤗 아직은 영어만 지원됩니다!")
 

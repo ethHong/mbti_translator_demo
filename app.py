@@ -12,9 +12,7 @@ st.subheader("Running on {}".format(device + processor))
 st.header("💻나는 오늘 어떤 MBTI처럼 말하고, 살았을까?")
 st.write("🤗문장을 입력하면, 이를 분석해서 MBTI를 출력해줍니다. 아직은 영어만 지원됩니다!")
 st.header("🤔작동 원리는?:")
-st.write("""🧠Faceook 의 Zero-Shot NLI 모델을 통해 문장과 단어의 연관성을 추론합니다. 
-우리가 인지하는 MBTI 특성을 Semantic 하게 표현하기 위해 연관 단어들을 맵핑한 dictionary를 만들어 사용합니다. 
-이 dictionary 를 어떻게 구성해 모델을 사용하느냐가 이 app 의 사용성을 결정합니다!""")
+st.write("Faceook 의 Zero-Shot NLI 모델을 통해 문장과 단어의 연관성을 추론합니다.")
 st.write("모델 및 프로젝트에 대해서 자세히 알고싶다면: https://github.com/ethHong/mbti_translator_demo")
 
 user_input = st.text_input("👇👇문장을 입력하면 MBTI가 나옵니다!", "I stayed home all day")

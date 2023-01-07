@@ -16,7 +16,7 @@ st.write("Using Zero-Shot NLI model, it computes probability of sentence and MBT
 st.write("More about the model: https://github.com/ethHong/mbti_translator_demo")
 
 user_input = st.text_input("👇👇Put your sentence here", "I stayed home all day")
-submit = st.button("Generate:)
+submit = st.button("Generate:")
 
 if submit:
     with st.spinner("AI is analysing result..."):

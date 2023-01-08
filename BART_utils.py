@@ -83,8 +83,7 @@ def plot_mbti(result):
     x, y = result.values()
     x_type, y_type = result.keys()
 
-    ax.broken_barh([(start, x), (x, x + y)], [10, 9],
-                   facecolors=("#FFC5BF", "#D4F0F0"))
+    ax.broken_barh([(start, x), (x, x + y)], [10, 9], facecolors=("#FFC5BF", "#D4F0F0"))
     ax.set_ylim(5, 15)
     ax.set_xlim(0, 100)
     ax.spines["left"].set_visible(False)
